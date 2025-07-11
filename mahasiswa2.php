@@ -25,9 +25,8 @@ $tittle = 'Daftar Mahasiswa';
 
 $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
 ?>
-<div class="content-wrapper">
-<section class="content">
-              <div class="container mt-5">
+
+<div class="container mt-5">
     <h1><i class="fas fa-users"></i> Data Mahasiswa</h1>
     <hr>
     <a href="tambah-mahasiswa.php" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i> Tambah</a>
@@ -67,3 +66,4 @@ $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
     </table>
 </div>
 <?php include 'layout/footer.php';
+?>

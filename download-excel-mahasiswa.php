@@ -6,7 +6,7 @@ if (!isset($_SESSION["login"])) {
     echo "<script>
            alert('login dulu');
            document.location.href = 'login.php';
-           </script>";
+           </script>"; 
     exit;
 }
 
