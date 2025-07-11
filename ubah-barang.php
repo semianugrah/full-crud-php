@@ -33,6 +33,8 @@ if (isset($_POST['ubah'])) {
 }
 ?>
 
+<div class="content-wrapper">
+<section class="content">
 <div class="container mt-5">
     <h1>Edit Barang</h1>
     <hr>
@@ -56,5 +58,6 @@ if (isset($_POST['ubah'])) {
         <button type="submit" name="ubah" class="btn btn-success" style="float: right;">Edit</button>
     </form>
 </div>
+</section>
 
 <?php include 'layout/footer.php'; ?>

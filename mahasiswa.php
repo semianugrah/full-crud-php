@@ -21,8 +21,6 @@ $title = 'Daftar Mahasiswa';
 
 include 'layout/header.php';
 
-$tittle = 'Daftar Mahasiswa';
-
 $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
 ?>
 <div class="content-wrapper">
