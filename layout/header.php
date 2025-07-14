@@ -16,8 +16,8 @@ include 'config/app.php';
 
 
     <link rel="stylesheet" href="assets-template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets-template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets-template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -204,7 +204,7 @@ include 'config/app.php';
             <a href="index3.html" class="brand-link">
                 <img src="assets-template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">CRUD PHP <b>Shemy</b></span>
             </a>
 
             <!-- Sidebar -->
