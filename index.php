@@ -32,7 +32,7 @@ $data_barang = select("SELECT * FROM barang ORDER BY id_barang ASC");
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard</h1>
+                    <h1 class="m-0"><i class="fas fa-list-ul"></i> Data Barang</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -119,11 +119,14 @@ $data_barang = select("SELECT * FROM barang ORDER BY id_barang ASC");
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><i class="fas fa-list-ul"></i> Data Barang</h3>
+                                    <h3 class="card-title">Tabel Data barang</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a href="tambah-barang.php" class="btn btn-primary btn-sm mb-2"><i class="fas fa-plus"></i> Tambah Barang</a>
+                                    <a href="tambah-barang.php" class="btn btn-primary btn-sm mb-2"><i class="fas fa-plus"></i> Tambah</a>
+                                    <button type="button" class="btn btn-success btn-sm mb-2">
+                                        <i class="fas fa-search"></i> Filter Data
+                                    </button>
                                     <table  id="example2" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>

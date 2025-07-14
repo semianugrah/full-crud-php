@@ -41,6 +41,9 @@ include 'config/app.php';
     <link rel="stylesheet" href="assets-template/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="assets-template/plugins/summernote/summernote-bs4.min.css">
+
+    <!-- jQuery -->
+<script src="assets-template/plugins/jquery/jquery.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -253,7 +256,7 @@ include 'config/app.php';
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="pegawai.php" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Data Pegawai (Realtime)
