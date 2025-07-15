@@ -8,6 +8,13 @@ if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
+    $secret_key = "6LfrLoMrAAAAAGULZ33Ft0eoXeHTGI9Ry780CSAi";
+
+    $verifikasi = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' .
+        $_POST['g-recaptcha-response']);
+
+    $response = json_decode($verifikasi);
+
     $result = mysqli_query($db, "SELECT * FROM akun WHERE username = '$username'");
 
     if (mysqli_num_rows($result) == 1) {
@@ -23,10 +30,14 @@ if (isset($_POST['login'])) {
 
             header("Location: index.php");
             exit;
+        } else {
+            $error = true;
         }
+    } else {
+        $erorRecaptcha = true;
     }
-    $error = true;
 }
+
 
 ?>
 
@@ -90,6 +101,12 @@ if (isset($_POST['login'])) {
                 <b>Username/Password SALAH</b>
             </div>
         <?php endif; ?>
+
+        <?php if(isset($error)) : ?>
+            <div class="alert alert-danger text-center">
+                <b>Recaptcha Tidak Valid</b>
+            </div>
+            <?php endif; ?>
 
         <form action="" method="POST">
             <div class="input-group mb-3">
