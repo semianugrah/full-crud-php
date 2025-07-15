@@ -31,9 +31,24 @@ $title = 'Tambah Barang';
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <div class="container mt-5">
-    <h1>Tambah Data Barang</h1>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0"><i class="fas fa-list-ul"></i> Tambah Barang</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item active">Tambah Barang</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
     <hr>
+    <section class="content">
+        <div class="container-fluid">
     <form action="" method="post">
         <div class="mb-3">
             <label for="">Nama Barang</label>

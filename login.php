@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -14,12 +14,12 @@ if (isset($_POST['login'])) {
         $hasil = mysqli_fetch_assoc($result);
 
         if (password_verify($password, $hasil['password'])) {
-            $_SESSION['login']     =true;
-            $_SESSION['id_akun']   =$hasil['id_akun'];
-            $_SESSION['nama']      =$hasil['nama'];
-            $_SESSION['username']  =$hasil['username'];
-            $_SESSION['email']     =$hasil['email'];
-            $_SESSION['level']     =$hasil['level'];
+            $_SESSION['login'] = true;
+            $_SESSION['id_akun'] = $hasil['id_akun'];
+            $_SESSION['nama'] = $hasil['nama'];
+            $_SESSION['username'] = $hasil['username'];
+            $_SESSION['email'] = $hasil['email'];
+            $_SESSION['level'] = $hasil['level'];
 
             header("Location: index.php");
             exit;
@@ -50,6 +50,8 @@ if (isset($_POST['login'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <!-- Favicons -->
     <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
@@ -80,32 +82,58 @@ if (isset($_POST['login'])) {
 <body class="text-center">
 
     <main class="form-signin">
-        <form action="" method="POST">
-            <img class="mb-4" src="assets/img/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
+        <img class="mb-4" src="assets/img/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
 
-            <?php if (isset($error)) : ?>
+        <?php if (isset($error)): ?>
             <div class="alert alert-danger text-center">
                 <b>Username/Password SALAH</b>
             </div>
-            <?php endif; ?> 
+        <?php endif; ?>
 
-            <div class="form-floating">
-                <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username...">
-                <label for="floatingInput">Username</label>
+        <form action="" method="POST">
+            <div class="input-group mb-3">
+                <input type="text" name="username" class="form-control" placeholder="Username..." required>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
             </div>
-            <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password...">
-                <label for="floatingPassword">Password</label>
+            <div class="input-group mb-3">
+                <input type="password" name="password" class="form-control" placeholder="Password..." required>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="g-recaptcha" data-sitekey="6LfrLoMrAAAAACsdS-2m-QePU_fvVUSn7-3Zwaa9"></div>
             </div>
 
-            <button class="w-100 btn btn-lg btn-primary" type="submit" name="login">Login</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+            <div class="row">
+                <div class="col-8">
+                </div>
+
+                <div class="col-4">
+                    <button type="submit" name="login" class="btn btn-primary btn-block">Masuk</button>
+                </div>
+            </div>
         </form>
+
+        <hr>
+        <p class="mb-1 text-center">
+            <span class="mt-5 mb-3 text-muted">Developer &copy;
+                <a href="https://mubatekno.com">Muba Teknologi</a> <?= date('Y') ?>
+            </span>
+        </p>
     </main>
 
-
-
+    <script src="assets-template/plugins/jquery/jquery.min.js"></script>
+    <script src="assets-template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets-template/dist/js/adminlte.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 
 </html>

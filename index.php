@@ -28,7 +28,7 @@ if (isset($_POST['filter'])) {
 
     $data_barang = select("SELECT * FROM barang WHERE tanggal BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY id_barang DESC");
 } else {
-    $jumlahDataPerhalaman = 1;
+    $jumlahDataPerhalaman = 5;
     $jumlahData = count(select("SELECT * FROM barang"));
     $jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
     $halamanAktif = (isset($_GET['halaman']) ? $_GET['halaman'] : 1);
@@ -138,7 +138,7 @@ if (isset($_POST['filter'])) {
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <a href="tambah-barang.php" class="btn btn-primary btn-sm mb-2"><i
-                                            class="fas fa-plus"></i> Tambah</a>
+                                            class="fas fa-plus-circle"></i> Tambah</a>
                                     <button type="button" class="btn btn-success btn-sm mb-2" data-toggle="modal"
                                         data-target="#modalFilter">
                                         <i class="fas fa-search"></i> Filter Data
