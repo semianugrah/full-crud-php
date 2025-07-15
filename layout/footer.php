@@ -70,23 +70,41 @@
 
 <script src="https://cdn.ckeditor.com/4.19.0/full/ckeditor.js"></script>
 
+
 <script>
   $(function () {
     $('#example2').DataTable();
   });
 </script>
 <script>
-        CKEDITOR.replace('alamat', {
-            filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-            height: '400px'  
-        });
-    </script>
+  CKEDITOR.replace('alamat', {
+    filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    height: '400px'
+  });
+</script>
 
 <script>
-    $(document).ready(function () {
-        $('#example').DataTable();
+  $(document).ready(function () {
+    $('#serverside').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: {
+
+        "url": "mahasiswa-serverside.php?action=table_data",
+        "dataType": "json",
+        "type": "POST"
+      },
+      columns: [
+        { "data": "no" },
+        { "data": "nama" },
+        { "data": "prodi" },
+        { "data": "jk" },
+        { "data": "telepon" },
+        { "data": "aksi" },
+      ]
     });
+  });
 </script>
 </body>
 

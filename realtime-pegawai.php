@@ -16,4 +16,4 @@ $data_pegawai = select("SELECT * FROM pegawai ORDER BY id_pegawai DESC");
         <td><?= $pegawai['telepon']; ?></td>
         <td><?= $pegawai['alamat']; ?></td>
     </tr>
-    <?php endforeach; ?>
+    <?php endforeach; ?>dddd
